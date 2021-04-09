@@ -56,8 +56,7 @@ class Plans(db.Model):
 
 class Cart(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    service_id = db.Column(
-        db.Integer, db.ForeignKey('plans.id'), nullable=False)
+    service_id = db.Column(db.Integer, db.ForeignKey('plans.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __init__(self, service_id, user_id):

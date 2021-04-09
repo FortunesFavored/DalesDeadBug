@@ -152,7 +152,7 @@ def mycart():
 
     for objects in context['cart']:
         if current_user.id == objects.user_id:
-            context['total_price'] += objects.plan.price
+            context['total_price'] += context['cart'].plan.price
     return render_template('shoppingcart.html', **context)
 
 @app.route('/removecartplan/delete/<int:cart_id>', methods=["POST"])
